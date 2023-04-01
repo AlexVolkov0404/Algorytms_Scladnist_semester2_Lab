@@ -1,0 +1,1 @@
+# Algorytms_Scladnist_semester2_Lab
