@@ -2,19 +2,34 @@
 //
 
 #include <iostream>
-
+#include <string>
+#include <vector> 
+#include "binHeap.h"
+#include "group.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::vector<std::string> groups = { "K11","K12","K13","K14"," K15","K16","K17","K18" };
+    BinominalHeap<std::string> tree1;
+    for (int i = 0; i < 8; i++)
+        tree1.insert(groups[i]);
+    std::cout << "NEW TREE\n";
+    tree1.print();
+
+    std::cout << "EXTRACT MIN\n";
+    tree1.extractMin();
+    tree1.print();
+    std::cout << "\n \n \n \n ---------------------------------------------\n \n ";
+
+    BinominalHeap<int> tree;
+    for (int i = 0; i < 10; i++)
+        tree.insert(i);
+    std::cout << "NEW TREE\n";
+    tree.print();
+
+    std::cout << "EXTRACT MIN\n";
+    tree.extractMin();
+    tree.print();
+   
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
