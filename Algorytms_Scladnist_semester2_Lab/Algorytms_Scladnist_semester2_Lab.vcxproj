@@ -128,11 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Algorytms_Scladnist_semester2_Lab.cpp" />
+    <ClCompile Include="BinomialHeap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binHeap.h" />
+    <ClInclude Include="BinomialHeap.h" />
+    <ClInclude Include="graphics.h" />
     <ClInclude Include="group.h" />
     <ClInclude Include="student.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="graphics.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

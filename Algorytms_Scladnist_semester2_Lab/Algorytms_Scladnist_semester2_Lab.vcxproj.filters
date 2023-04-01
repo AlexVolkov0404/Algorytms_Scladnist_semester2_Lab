@@ -18,6 +18,9 @@
     <ClCompile Include="Algorytms_Scladnist_semester2_Lab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BinomialHeap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="group.h">
@@ -29,5 +32,16 @@
     <ClInclude Include="binHeap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BinomialHeap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="graphics.lib">
+      <Filter>Resource Files</Filter>
+    </Library>
   </ItemGroup>
 </Project>
