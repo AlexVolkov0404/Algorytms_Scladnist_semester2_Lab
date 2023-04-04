@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,12 +130,15 @@
   <ItemGroup>
     <ClCompile Include="Algorytms_Scladnist_semester2_Lab.cpp" />
     <ClCompile Include="BinomialHeap.cpp" />
+    <ClCompile Include="PerfectHash.cpp" />
+    <ClCompile Include="student.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="binHeap.h" />
     <ClInclude Include="BinomialHeap.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="group.h" />
+    <ClInclude Include="PerfectHash.h" />
+    <ClInclude Include="perfectHashS.h" />
     <ClInclude Include="student.h" />
   </ItemGroup>
   <ItemGroup>

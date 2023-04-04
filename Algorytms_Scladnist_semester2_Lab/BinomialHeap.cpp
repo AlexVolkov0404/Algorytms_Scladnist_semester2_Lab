@@ -214,17 +214,18 @@ list<BinomialHeap*> BinomialHeap::extractMin(list<BinomialHeap*> _heap)
     new_heap = adjust(new_heap);
     return new_heap;
 }
-
+// print function for Binomial Tree
 void BinomialHeap::printTree(BinomialHeap* h)
 {
     while (h)
     {
-        cout << h->data << " ";
+        cout <<  h->data <<endl;
+        
         printTree(h->child);
         h = h->sibling;
     }
 }
-
+// print function for binomial heap
 void BinomialHeap::printHeap(list<BinomialHeap*> _heap)
 {
     list<BinomialHeap*> ::iterator it;
