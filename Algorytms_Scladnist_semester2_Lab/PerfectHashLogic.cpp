@@ -1,8 +1,8 @@
-#include "PerfectHash.h"
+#include "PerfectHashLogic.h"
 
 
 
-void PerfectHash::Initialize(const std::vector<int>& numbers)
+void PerfectHashLogic::Initialize(const std::vector<int>& numbers)
 {
     for (int i = 0; i < numbers.size(); ++i)
     {
@@ -18,7 +18,7 @@ void PerfectHash::Initialize(const std::vector<int>& numbers)
     }
 }
 
-bool PerfectHash::Contains(int number)
+bool PerfectHashLogic::Contains(int number)
 {
     for (int round = 0; round < 3; ++round)
     {
@@ -30,7 +30,7 @@ bool PerfectHash::Contains(int number)
     return false;
 }
 
-void PerfectHash::StringInitialize(std::string letter)
+void PerfectHashLogic::StringInitialize(std::string letter)
 {
     std::vector<int>numbers;
     std::string message;
@@ -49,7 +49,7 @@ void PerfectHash::StringInitialize(std::string letter)
     Initialize(numbers);
 }
 
-bool PerfectHash::StringContains(std::string letter)
+bool PerfectHashLogic::StringContains(std::string letter)
 {
     std::string message;
     for (int i = 0; i < letter.length(); i++)
@@ -74,7 +74,7 @@ bool PerfectHash::StringContains(std::string letter)
     return true;
 }
 
-int PerfectHash::hash(int rounds, int number)
+int PerfectHashLogic::hash(int rounds, int number)
 {
     int withOffset = number;
     srand(withOffset);
@@ -86,12 +86,12 @@ int PerfectHash::hash(int rounds, int number)
     return h;
 }
 
-inline int PerfectHash::bigRand()
+inline int PerfectHashLogic::bigRand()
 {
     return (rand() << 15) | rand(); // RAND_MAX is 0x7FFF in VS2010
 }
 
-bool PerfectHash::add(int number)
+bool PerfectHashLogic::add(int number)
 {
     int toInsert = number;
     for (int i = 0; i < _size; ++i)

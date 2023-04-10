@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,17 +130,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Algorytms_Scladnist_semester2_Lab.cpp" />
-    <ClCompile Include="BinomialHeap.cpp" />
-    <ClCompile Include="PerfectHash.cpp" />
-    <ClCompile Include="student.cpp" />
+    <ClCompile Include="BinomialHeapLogic.cpp" />
+    <ClCompile Include="OptimalBinaryTreeLogic.cpp" />
+    <ClCompile Include="PerfectHashLogic.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinomialHeap.h" />
+    <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="BinomialHeapLogic.h" />
     <ClInclude Include="graphics.h" />
-    <ClInclude Include="group.h" />
-    <ClInclude Include="PerfectHash.h" />
-    <ClInclude Include="perfectHashS.h" />
-    <ClInclude Include="student.h" />
+    <ClInclude Include="OptimalBinaryTreeLogic.h" />
+    <ClInclude Include="PerfectHashLogic.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="graphics.lib" />

@@ -18,33 +18,30 @@
     <ClCompile Include="Algorytms_Scladnist_semester2_Lab.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BinomialHeap.cpp">
+    <ClCompile Include="BinomialHeapLogic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PerfectHash.cpp">
+    <ClCompile Include="PerfectHashLogic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="student.cpp">
+    <ClCompile Include="OptimalBinaryTreeLogic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="group.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="student.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BinomialHeap.h">
+    <ClInclude Include="BinomialHeapLogic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="graphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="perfectHashS.h">
+    <ClInclude Include="PerfectHashLogic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PerfectHash.h">
+    <ClInclude Include="BinaryTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OptimalBinaryTreeLogic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

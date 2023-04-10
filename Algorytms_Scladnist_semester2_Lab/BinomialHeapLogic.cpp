@@ -1,24 +1,24 @@
-#include "BinomialHeap.h"
+#include "BinomialHeapLogic.h"
 
-BinomialHeap::BinomialHeap()
+BinomialHeapLogic::BinomialHeapLogic()
 {
 }
 
-BinomialHeap::BinomialHeap(int data, int degree, BinomialHeap* child, BinomialHeap* sibling, BinomialHeap* parent)
+BinomialHeapLogic::BinomialHeapLogic(int data, int degree, BinomialHeapLogic* child, BinomialHeapLogic* sibling, BinomialHeapLogic* parent)
 {
 
 }
 
-BinomialHeap* BinomialHeap::newNode(int key)
+BinomialHeapLogic* BinomialHeapLogic::newNode(int key)
 {
-    BinomialHeap* temp = new BinomialHeap;
+    BinomialHeapLogic* temp = new BinomialHeapLogic;
     temp->data = key;
     temp->degree = 0;
     temp->child = temp->parent = temp->sibling = NULL;
     return temp;
 }
 
-BinomialHeap* BinomialHeap::mergeBinomialTrees(BinomialHeap* b1, BinomialHeap* b2)
+BinomialHeapLogic* BinomialHeapLogic::mergeBinomialTrees(BinomialHeapLogic* b1, BinomialHeapLogic* b2)
 {
     // Make sure b1 is smaller
     if (b1->data > b2->data)
@@ -34,13 +34,13 @@ BinomialHeap* BinomialHeap::mergeBinomialTrees(BinomialHeap* b1, BinomialHeap* b
     return b1;
 }
 
-list<BinomialHeap*> BinomialHeap::unionBionomialHeap(list<BinomialHeap*> l1, list<BinomialHeap*> l2)
+list<BinomialHeapLogic*> BinomialHeapLogic::unionBionomialHeap(list<BinomialHeapLogic*> l1, list<BinomialHeapLogic*> l2)
 {
     // _new to another binomial heap which contain
   // new heap after merging l1 & l2
-    list<BinomialHeap*> _new;
-    list<BinomialHeap*>::iterator it = l1.begin();
-    list<BinomialHeap*>::iterator ot = l2.begin();
+    list<BinomialHeapLogic*> _new;
+    list<BinomialHeapLogic*>::iterator it = l1.begin();
+    list<BinomialHeapLogic*>::iterator ot = l2.begin();
     while (it != l1.end() && ot != l2.end())
     {
         // if D(l1) <= D(l2)
@@ -75,12 +75,12 @@ list<BinomialHeap*> BinomialHeap::unionBionomialHeap(list<BinomialHeap*> l1, lis
     return _new;
 }
 
-list<BinomialHeap*> BinomialHeap::adjust(list<BinomialHeap*> _heap)
+list<BinomialHeapLogic*> BinomialHeapLogic::adjust(list<BinomialHeapLogic*> _heap)
 {
     if (_heap.size() <= 1)
         return _heap;
-    list<BinomialHeap*> new_heap;
-    list<BinomialHeap*>::iterator it1, it2, it3;
+    list<BinomialHeapLogic*> new_heap;
+    list<BinomialHeapLogic*>::iterator it1, it2, it3;
     it1 = it2 = it3 = _heap.begin();
 
     if (_heap.size() == 2)
@@ -127,7 +127,7 @@ list<BinomialHeap*> BinomialHeap::adjust(list<BinomialHeap*> _heap)
         // if degree of two Binomial Tree are same in heap
         else if ((*it1)->degree == (*it2)->degree)
         {
-            BinomialHeap* temp;
+            BinomialHeapLogic* temp;
             *it1 = mergeBinomialTrees(*it1, *it2);
             it2 = _heap.erase(it2);
             if (it3 != _heap.end())
@@ -137,10 +137,10 @@ list<BinomialHeap*> BinomialHeap::adjust(list<BinomialHeap*> _heap)
     return _heap;
 }
 
-list<BinomialHeap*> BinomialHeap::insertATreeInHeap(list<BinomialHeap*> _heap, BinomialHeap* tree)
+list<BinomialHeapLogic*> BinomialHeapLogic::insertATreeInHeap(list<BinomialHeapLogic*> _heap, BinomialHeapLogic* tree)
 {
     // creating a new heap i.e temp
-    list<BinomialHeap*> temp;
+    list<BinomialHeapLogic*> temp;
 
     // inserting Binomial Tree into heap
     temp.push_back(tree);
@@ -152,11 +152,11 @@ list<BinomialHeap*> BinomialHeap::insertATreeInHeap(list<BinomialHeap*> _heap, B
     return adjust(temp);
 }
 
-list<BinomialHeap*> BinomialHeap::removeMinFromTreeReturnBHeap(BinomialHeap* tree)
+list<BinomialHeapLogic*> BinomialHeapLogic::removeMinFromTreeReturnBHeap(BinomialHeapLogic* tree)
 {
-    list<BinomialHeap*> heap;
-    BinomialHeap* temp = tree->child;
-    BinomialHeap* lo;
+    list<BinomialHeapLogic*> heap;
+    BinomialHeapLogic* temp = tree->child;
+    BinomialHeapLogic* lo;
 
     // making a binomial heap from Binomial Tree
     while (temp)
@@ -169,16 +169,16 @@ list<BinomialHeap*> BinomialHeap::removeMinFromTreeReturnBHeap(BinomialHeap* tre
     return heap;
 }
 
-list<BinomialHeap*> BinomialHeap::insertE(list<BinomialHeap*> _head, int key)
+list<BinomialHeapLogic*> BinomialHeapLogic::insertE(list<BinomialHeapLogic*> _head, int key)
 {
-    BinomialHeap* temp = newNode(key);
+    BinomialHeapLogic* temp = newNode(key);
     return insertATreeInHeap(_head, temp);
 }
 
-BinomialHeap* BinomialHeap::getMin(list<BinomialHeap*> _heap)
+BinomialHeapLogic* BinomialHeapLogic::getMin(list<BinomialHeapLogic*> _heap)
 {
-    list<BinomialHeap*>::iterator it = _heap.begin();
-    BinomialHeap* temp = *it;
+    list<BinomialHeapLogic*>::iterator it = _heap.begin();
+    BinomialHeapLogic* temp = *it;
     while (it != _heap.end())
     {
         if ((*it)->data < temp->data)
@@ -188,15 +188,15 @@ BinomialHeap* BinomialHeap::getMin(list<BinomialHeap*> _heap)
     return temp;
 }
 
-list<BinomialHeap*> BinomialHeap::extractMin(list<BinomialHeap*> _heap)
+list<BinomialHeapLogic*> BinomialHeapLogic::extractMin(list<BinomialHeapLogic*> _heap)
 {
-    list<BinomialHeap*> new_heap, lo;
-    BinomialHeap* temp;
+    list<BinomialHeapLogic*> new_heap, lo;
+    BinomialHeapLogic* temp;
 
     // temp contains the pointer of minimum value
     // element in heap
     temp = getMin(_heap);
-    list<BinomialHeap*>::iterator it;
+    list<BinomialHeapLogic*>::iterator it;
     it = _heap.begin();
     while (it != _heap.end())
     {
@@ -215,7 +215,7 @@ list<BinomialHeap*> BinomialHeap::extractMin(list<BinomialHeap*> _heap)
     return new_heap;
 }
 // print function for Binomial Tree
-void BinomialHeap::printTree(BinomialHeap* h)
+void BinomialHeapLogic::printTree(BinomialHeapLogic* h)
 {
     while (h)
     {
@@ -226,9 +226,9 @@ void BinomialHeap::printTree(BinomialHeap* h)
     }
 }
 // print function for binomial heap
-void BinomialHeap::printHeap(list<BinomialHeap*> _heap)
+void BinomialHeapLogic::printHeap(list<BinomialHeapLogic*> _heap)
 {
-    list<BinomialHeap*> ::iterator it;
+    list<BinomialHeapLogic*> ::iterator it;
     it = _heap.begin();
     while (it != _heap.end())
     {

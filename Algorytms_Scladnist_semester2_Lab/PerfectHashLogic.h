@@ -12,7 +12,7 @@ using std::cin;
 using std::endl;
 using std::vector;
 using std::list;
-class PerfectHash
+class PerfectHashLogic
 {
     // min 36500, sweetspot 73000
     static const int _size = 73000;
@@ -21,7 +21,7 @@ class PerfectHash
     std::vector<int> _set2;
     std::vector<int> _set3;
 public:
-    PerfectHash() : _noentry(std::numeric_limits<int>::min()), _set1(_size, _noentry), _set2(_size, _noentry), _set3(_size, _noentry) {  }
+    PerfectHashLogic() : _noentry(std::numeric_limits<int>::min()), _set1(_size, _noentry), _set2(_size, _noentry), _set3(_size, _noentry) {  }
     void Initialize(const std::vector<int>& numbers);
     bool Contains(int number);
     void StringInitialize(std::string letter);
